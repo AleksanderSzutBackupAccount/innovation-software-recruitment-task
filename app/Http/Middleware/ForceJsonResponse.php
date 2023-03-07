@@ -25,7 +25,7 @@ class ForceJsonResponse
         $response = $next($request);
         $response->headers->set('Content-Type', 'application/json');
 
-        if (! $response instanceof JsonResponse) {
+        if (!$response instanceof JsonResponse) {
             $response = $this->factory->json(
                 $response->content(),
                 $response->status(),

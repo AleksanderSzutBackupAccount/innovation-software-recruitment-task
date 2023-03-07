@@ -39,7 +39,7 @@ final class MessengerCommandBus implements CommandBus
         try {
             $this->bus->dispatch($command);
         } catch (NoHandlerForMessageException) {
-            throw new CommandNotRegistered('Command ' . get_class($command) . ' not registered.');
+            throw new CommandNotRegistered('Command '.get_class($command).' not registered.');
         } catch (HandlerFailedException $error) {
             throw $error->getPrevious() ?? $error;
         }

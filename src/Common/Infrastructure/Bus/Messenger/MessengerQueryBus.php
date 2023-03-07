@@ -38,7 +38,7 @@ final class MessengerQueryBus implements QueryBus
 
             return $stamp->getResult();
         } catch (NoHandlerForMessageException) {
-            throw new QueryNotRegistered('Query ' . get_class($query) . ' not registered.');
+            throw new QueryNotRegistered('Query '.get_class($query).' not registered.');
         }
     }
 }
